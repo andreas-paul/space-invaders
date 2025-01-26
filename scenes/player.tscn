@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://cyo60kn6nd32l"]
+
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_8qmkt"]
+[ext_resource type="Texture2D" uid="uid://c17gfod12ejfb" path="res://assets/player.png" id="1_ndenr"]
+[ext_resource type="AudioStream" uid="uid://cdqtnqvhyly3d" path="res://assets/shoot.wav" id="3_6vvx0"]
+[ext_resource type="AudioStream" uid="uid://b86bqh4y6ugkg" path="res://assets/explosion.wav" id="4_gqmg4"]
+[ext_resource type="AudioStream" uid="uid://c024q41bqebjn" path="res://assets/player_hit.wav" id="5_x4lqr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_278jb"]
+size = Vector2(32, 9)
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+script = ExtResource("1_8qmkt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_278jb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0.724802, 0.262251, 1)
+texture = ExtResource("1_ndenr")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 16)
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(0, -8)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.8
+autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_6vvx0")
+
+[node name="SoundDeath" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_gqmg4")
+
+[node name="SoundHit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_x4lqr")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://nokqhj0enmar"]
+
+[ext_resource type="Script" path="res://scenes/mob.gd" id="1_b405d"]
+[ext_resource type="Texture2D" uid="uid://bgi0wdjaavi1w" path="res://assets/alien_type2.png" id="2_43kh3"]
+[ext_resource type="AudioStream" uid="uid://24qojen68xsl" path="res://assets/alien_fire.mp3" id="3_plf0m"]
+[ext_resource type="AudioStream" uid="uid://duyblq18k80th" path="res://assets/alien_explosion.wav" id="4_ymr6j"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ebiy5"]
+radius = 5.0
+height = 10.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v5y5"]
+atlas = ExtResource("2_43kh3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfyw2"]
+atlas = ExtResource("2_43kh3")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3qlts"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5v5y5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfyw2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.5
+}]
+
+[node name="MobType2" type="CharacterBody2D" groups=["Mobs"]]
+script = ExtResource("1_b405d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_ebiy5")
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(0, 3)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, 3)
+target_position = Vector2(0, 250)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3qlts")
+autoplay = "default"
+frame_progress = 0.900105
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_43kh3")
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="SoundShoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_plf0m")
+
+[node name="SoundExplode" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ymr6j")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

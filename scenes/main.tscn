@@ -1,0 +1,152 @@
+[gd_scene load_steps=8 format=3 uid="uid://bwrehdmig38ts"]
+
+[ext_resource type="Texture2D" uid="uid://cokwadgiacsga" path="res://assets/space-bg.png" id="1_x05pi"]
+[ext_resource type="PackedScene" uid="uid://cr3suplt3n2ov" path="res://scenes/mob_controller.tscn" id="2_0reh1"]
+[ext_resource type="Script" path="res://scenes/ui.gd" id="3_fcgtp"]
+[ext_resource type="PackedScene" uid="uid://cyo60kn6nd32l" path="res://scenes/player.tscn" id="3_v8tf0"]
+[ext_resource type="PackedScene" uid="uid://784djqbtfv5b" path="res://scenes/mothership.tscn" id="4_dg2g8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gj72f"]
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_dux6w"]
+font_size = 10
+
+[node name="Main" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -99
+position = Vector2(112, 141)
+texture = ExtResource("1_x05pi")
+
+[node name="Player" parent="." instance=ExtResource("3_v8tf0")]
+position = Vector2(112, 232)
+scale = Vector2(0.6, 0.6)
+
+[node name="MobController" parent="." instance=ExtResource("2_0reh1")]
+position = Vector2(0, 16)
+
+[node name="Mothership" parent="." instance=ExtResource("4_dg2g8")]
+position = Vector2(-20, 30)
+scale = Vector2(0.8, 0.8)
+
+[node name="UIOverlay" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="UI" type="Control" parent="UIOverlay"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 224.0
+offset_bottom = 16.0
+script = ExtResource("3_fcgtp")
+
+[node name="ColorRect" type="ColorRect" parent="UIOverlay/UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.154876, 0.154876, 0.154876, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="UIOverlay/UI/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UIOverlay/UI/ColorRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UIOverlay/UI/ColorRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "SCORE: "
+label_settings = SubResource("LabelSettings_gj72f")
+
+[node name="ScoreLabel" type="Label" parent="UIOverlay/UI/ColorRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_dux6w")
+
+[node name="ColorRect2" type="ColorRect" parent="UIOverlay/UI"]
+layout_mode = 0
+offset_top = 240.0
+offset_right = 224.0
+offset_bottom = 256.0
+color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="UIOverlay/UI/ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_right = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UIOverlay/UI/ColorRect2/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UIOverlay/UI/ColorRect2/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "LIFES: "
+label_settings = SubResource("LabelSettings_gj72f")
+
+[node name="LifesLabel" type="Label" parent="UIOverlay/UI/ColorRect2/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_dux6w")
+
+[node name="GameOverScreen" type="Control" parent="UIOverlay/UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 141.0
+offset_bottom = 141.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="UIOverlay/UI/GameOverScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UIOverlay/UI/GameOverScreen/CenterContainer"]
+layout_mode = 2
+text = "GAME OVER"
+
+[node name="PlayerWonScreen" type="Control" parent="UIOverlay/UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 138.0
+offset_right = 1.0
+offset_bottom = 138.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="UIOverlay/UI/PlayerWonScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="UIOverlay/UI/PlayerWonScreen/CenterContainer"]
+layout_mode = 2
+text = "YOU WON!"

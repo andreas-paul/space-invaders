@@ -1,0 +1,262 @@
+[gd_scene load_steps=5 format=3 uid="uid://cr3suplt3n2ov"]
+
+[ext_resource type="Script" path="res://scenes/mob_controller.gd" id="1_ngr0l"]
+[ext_resource type="PackedScene" uid="uid://nokqhj0enmar" path="res://scenes/mob_type2.tscn" id="2_aaxgh"]
+[ext_resource type="PackedScene" uid="uid://dcdw31oetywin" path="res://scenes/mob.tscn" id="2_y81qg"]
+[ext_resource type="PackedScene" uid="uid://c3ff0ei8deteb" path="res://scenes/mob_type3.tscn" id="3_f254s"]
+
+[node name="MobController" type="Node2D"]
+script = ExtResource("1_ngr0l")
+
+[node name="Mobs" type="Node2D" parent="."]
+scale = Vector2(0.8, 0.8)
+
+[node name="MobType2" parent="Mobs" instance=ExtResource("2_aaxgh")]
+position = Vector2(10, 10)
+scale = Vector2(0.8, 0.8)
+
+[node name="MobType3" parent="Mobs" instance=ExtResource("2_aaxgh")]
+position = Vector2(30, 10)
+scale = Vector2(0.8, 0.8)
+
+[node name="MobType4" parent="Mobs" instance=ExtResource("2_aaxgh")]
+position = Vector2(10, 30)
+scale = Vector2(0.8, 0.8)
+
+[node name="MobType5" parent="Mobs" instance=ExtResource("2_aaxgh")]
+position = Vector2(30, 30)
+scale = Vector2(0.8, 0.8)
+
+[node name="MobType6" parent="Mobs" instance=ExtResource("2_aaxgh")]
+position = Vector2(30, 30)
+scale = Vector2(0.8, 0.8)
+
+[node name="MobType7" parent="Mobs" instance=ExtResource("2_aaxgh")]
+position = Vector2(50, 10)
+scale = Vector2(0.8, 0.8)
+
+[node name="MobType8" parent="Mobs" instance=ExtResource("2_aaxgh")]
+position = Vector2(50, 30)
+scale = Vector2(0.8, 0.8)
+
+[node name="MobType9" parent="Mobs" instance=ExtResource("2_aaxgh")]
+position = Vector2(70, 10)
+scale = Vector2(0.8, 0.8)
+
+[node name="MobType10" parent="Mobs" instance=ExtResource("2_aaxgh")]
+position = Vector2(70, 30)
+scale = Vector2(0.8, 0.8)
+
+[node name="MobType11" parent="Mobs" instance=ExtResource("2_aaxgh")]
+position = Vector2(90, 10)
+scale = Vector2(0.8, 0.8)
+
+[node name="MobType12" parent="Mobs" instance=ExtResource("2_aaxgh")]
+position = Vector2(90, 30)
+scale = Vector2(0.8, 0.8)
+
+[node name="MobType13" parent="Mobs" instance=ExtResource("2_aaxgh")]
+position = Vector2(110, 10)
+scale = Vector2(0.8, 0.8)
+
+[node name="MobType14" parent="Mobs" instance=ExtResource("2_aaxgh")]
+position = Vector2(110, 30)
+scale = Vector2(0.8, 0.8)
+
+[node name="MobType15" parent="Mobs" instance=ExtResource("2_aaxgh")]
+position = Vector2(130, 10)
+scale = Vector2(0.8, 0.8)
+
+[node name="MobType16" parent="Mobs" instance=ExtResource("2_aaxgh")]
+position = Vector2(130, 30)
+scale = Vector2(0.8, 0.8)
+
+[node name="MobType17" parent="Mobs" instance=ExtResource("2_aaxgh")]
+position = Vector2(150, 10)
+scale = Vector2(0.8, 0.8)
+
+[node name="MobType18" parent="Mobs" instance=ExtResource("2_aaxgh")]
+position = Vector2(150, 30)
+scale = Vector2(0.8, 0.8)
+
+[node name="MobType19" parent="Mobs" instance=ExtResource("2_aaxgh")]
+position = Vector2(170, 10)
+scale = Vector2(0.8, 0.8)
+
+[node name="MobType20" parent="Mobs" instance=ExtResource("2_aaxgh")]
+position = Vector2(170, 30)
+scale = Vector2(0.8, 0.8)
+
+[node name="MobType21" parent="Mobs" instance=ExtResource("2_aaxgh")]
+position = Vector2(190, 10)
+scale = Vector2(0.8, 0.8)
+
+[node name="MobType22" parent="Mobs" instance=ExtResource("2_aaxgh")]
+position = Vector2(190, 30)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob" parent="Mobs" instance=ExtResource("3_f254s")]
+position = Vector2(10, 50)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob2" parent="Mobs" instance=ExtResource("3_f254s")]
+position = Vector2(10, 70)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob3" parent="Mobs" instance=ExtResource("3_f254s")]
+position = Vector2(30, 50)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob4" parent="Mobs" instance=ExtResource("3_f254s")]
+position = Vector2(30, 70)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob5" parent="Mobs" instance=ExtResource("3_f254s")]
+position = Vector2(50, 50)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob6" parent="Mobs" instance=ExtResource("3_f254s")]
+position = Vector2(50, 70)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob7" parent="Mobs" instance=ExtResource("3_f254s")]
+position = Vector2(70, 50)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob8" parent="Mobs" instance=ExtResource("3_f254s")]
+position = Vector2(70, 70)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob9" parent="Mobs" instance=ExtResource("3_f254s")]
+position = Vector2(90, 50)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob10" parent="Mobs" instance=ExtResource("3_f254s")]
+position = Vector2(90, 70)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob11" parent="Mobs" instance=ExtResource("3_f254s")]
+position = Vector2(110, 50)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob12" parent="Mobs" instance=ExtResource("3_f254s")]
+position = Vector2(110, 70)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob13" parent="Mobs" instance=ExtResource("3_f254s")]
+position = Vector2(130, 50)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob14" parent="Mobs" instance=ExtResource("3_f254s")]
+position = Vector2(130, 70)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob15" parent="Mobs" instance=ExtResource("3_f254s")]
+position = Vector2(150, 50)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob16" parent="Mobs" instance=ExtResource("3_f254s")]
+position = Vector2(150, 70)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob17" parent="Mobs" instance=ExtResource("3_f254s")]
+position = Vector2(170, 50)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob18" parent="Mobs" instance=ExtResource("3_f254s")]
+position = Vector2(170, 70)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob19" parent="Mobs" instance=ExtResource("3_f254s")]
+position = Vector2(190, 50)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob20" parent="Mobs" instance=ExtResource("3_f254s")]
+position = Vector2(190, 70)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob27" parent="Mobs" instance=ExtResource("2_y81qg")]
+position = Vector2(30, 90)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob28" parent="Mobs" instance=ExtResource("2_y81qg")]
+position = Vector2(50, 90)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob29" parent="Mobs" instance=ExtResource("2_y81qg")]
+position = Vector2(70, 90)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob30" parent="Mobs" instance=ExtResource("2_y81qg")]
+position = Vector2(90, 90)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob31" parent="Mobs" instance=ExtResource("2_y81qg")]
+position = Vector2(110, 90)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob32" parent="Mobs" instance=ExtResource("2_y81qg")]
+position = Vector2(10, 90)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob33" parent="Mobs" instance=ExtResource("2_y81qg")]
+position = Vector2(10, 110)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob34" parent="Mobs" instance=ExtResource("2_y81qg")]
+position = Vector2(30, 110)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob35" parent="Mobs" instance=ExtResource("2_y81qg")]
+position = Vector2(50, 110)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob36" parent="Mobs" instance=ExtResource("2_y81qg")]
+position = Vector2(70, 110)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob37" parent="Mobs" instance=ExtResource("2_y81qg")]
+position = Vector2(90, 110)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob38" parent="Mobs" instance=ExtResource("2_y81qg")]
+position = Vector2(110, 110)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob42" parent="Mobs" instance=ExtResource("2_y81qg")]
+position = Vector2(130, 90)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob43" parent="Mobs" instance=ExtResource("2_y81qg")]
+position = Vector2(130, 110)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob47" parent="Mobs" instance=ExtResource("2_y81qg")]
+position = Vector2(150, 90)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob48" parent="Mobs" instance=ExtResource("2_y81qg")]
+position = Vector2(150, 110)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob53" parent="Mobs" instance=ExtResource("2_y81qg")]
+position = Vector2(170, 90)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob54" parent="Mobs" instance=ExtResource("2_y81qg")]
+position = Vector2(170, 110)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob59" parent="Mobs" instance=ExtResource("2_y81qg")]
+position = Vector2(190, 90)
+scale = Vector2(0.8, 0.8)
+
+[node name="Mob60" parent="Mobs" instance=ExtResource("2_y81qg")]
+position = Vector2(190, 110)
+scale = Vector2(0.8, 0.8)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
